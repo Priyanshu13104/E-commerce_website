@@ -33,3 +33,8 @@ app.set('view engine', 'ejs');
 //middleware
 app.use(express.json())
 app.use(express.urlencodded({ extended : true }));
+
+// Set static folder for CSS
+app.use(express.static(path.join(__dirname, 'public')));
+
+// import routes
