@@ -1,55 +1,56 @@
-<nav class="bg-black text-white shadow-lg">
-  <div class="max-w-7xl mx-auto px-8">
-    <div class="flex justify-between items-center h-16">
-      <!-- Logo Area -->
-      <div class="flex items-center">
-        <span class="text-2xl font-bold tracking-wider hover:text-gray-300 transition-colors duration-300">
-          E-Commerce
-        </span>
-      </div>
-
-      <!-- Navigation Links -->
-      <div class="flex items-center space-x-8">
-        <a href="/" class="relative group">
-          <span class="text-gray-300 hover:text-white transition-colors duration-300">Home</span>
-          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-        </a>
-        <a href="/products" class="relative group">
-          <span class="text-gray-300 hover:text-white transition-colors duration-300">Products</span>
-          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-        </a>
-        <a href="/cart" class="relative group">
-          <span class="text-gray-300 hover:text-white transition-colors duration-300">Cart</span>
-          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-        </a>
-
-        <% if (user && user.isAdmin) { %>
-          <!-- Admin Dashboard (visible only for admin users) -->
-          <a href="/admin" class="relative group">
-            <span class="text-gray-300 hover:text-white transition-colors duration-300">Admin Dashboard</span>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <nav class="bg-black text-white shadow-lg">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo Area -->
+        <div class="flex items-center">
+          <span class="text-2xl font-bold tracking-wider hover:text-gray-300 transition-colors duration-300">
+            E-Commerce
+          </span>
+        </div>
+  
+        <!-- Navigation Links -->
+        <div class="flex items-center space-x-8">
+          <a href="/" class="relative group">
+            <span class="text-gray-300 hover:text-white transition-colors duration-300">Home</span>
             <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
           </a>
-        <% } %>
-
-        <!-- Authentication Links -->
-        <div class="flex items-center space-x-4">
-          <% if (!user) { %>
-            <!-- If the user is not logged in -->
-            <a href="/auth/login" class="px-4 py-2 border border-white text-white rounded-md hover:bg-white hover:text-black transition-all duration-300">
-              Sign In
+          <a href="/products" class="relative group">
+            <span class="text-gray-300 hover:text-white transition-colors duration-300">Products</span>
+            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="/cart" class="relative group">
+            <span class="text-gray-300 hover:text-white transition-colors duration-300">Cart</span>
+            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+          </a>
+            <a href="/admin" class="relative group">
+              <span class="text-gray-300 hover:text-white transition-colors duration-300">Admin Dashboard</span>
+              <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <a href="/auth/register" class="px-4 py-2 bg-white text-black rounded-md hover:bg-gray-200 transition-all duration-300">
-              Sign Up
-            </a>
-          <% } else { %>
-            <!-- If the user is logged in -->
-            <a href="/auth/logout" class="px-4 py-2 border border-white text-white rounded-md hover:bg-white hover:text-black transition-all duration-300">
-              Logout
-            </a>
-            <span class="text-gray-300">Welcome, <%= user.name %></span>
-          <% } %>
+  
+          <!-- Authentication Links -->
+          <div class="flex items-center space-x-4">
+              <a href="/auth/login" class="px-4 py-2 border border-white text-white rounded-md hover:bg-white hover:text-black transition-all duration-300">
+                Sign In
+              </a>
+              <a href="/auth/register" class="px-4 py-2 bg-white text-black rounded-md hover:bg-gray-200 transition-all duration-300">
+                Sign Up
+              </a>
+              <a href="/auth/logout" class="px-4 py-2 border border-white text-white rounded-md hover:bg-white hover:text-black transition-all duration-300">
+                Logout
+              </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
+</body>
+</html>

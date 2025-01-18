@@ -1,8 +1,10 @@
-import { express } from "express";
-import { mongoose } from "mongoose";
-import { path } from "path";
-import { dotenv } from "dotenv";
+import express from "express";
+import mongoose from "mongoose";
+import path from "path";
+import  dotenv  from "dotenv";
 import cors from "cors";
+import { fileURLToPath } from 'url';
+
 
 // laod environment variables
 dotenv.config()
@@ -41,11 +43,9 @@ app.set('view engine', 'ejs');
 
 //middleware
 app.use(express.json())
-app.use(express.urlencodded({ extended : true }));
+app.use(express.urlencoded({ extended : true }));
 app.use(cors());
 
-// Set static folder for CSS
-app.use(express.static(path.join(__dirname, 'public')));
 
 // import routes
 import authroutes from "./routes/auth.js"
@@ -60,6 +60,12 @@ app.use('/auth', authroutes)
 // app.use('/admin', adminroutes)
 // app.use('/proudcts', productroutes)
 // app.use('/cart', cartroutes)
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+
+app.set('views', path.join(__dirname, 'views'));
 
 // server start
 // const port = process.env.PORT || 3030
